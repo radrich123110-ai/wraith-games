@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1280 720" preserveAspectRatio="none">
+<rect width="1280" height="720" fill="#070910"/>
+<foreignObject x="0" y="0" width="1280" height="720"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"/><style>html,body{margin:0;height:100%;background:#070910;color:white;font:16px Arial}iframe{width:100%;height:100%;border:0}#msg{position:absolute;top:45%;width:100%;text-align:center;color:#b79bff}</style></head><body>
+<div id="msg">WRAITH — loading your launcher…</div><iframe id="app" title="WRAITH" allowfullscreen="allowfullscreen"></iframe>
+<script><![CDATA[
+(function(){
+const base='https://cdn.jsdelivr.net/gh/radrich123110-ai/wraith@main/';
+fetch(base+'index.html?reload='+Date.now()).then(r=>{if(!r.ok)throw Error('HTTP '+r.status);return r.text()}).then(html=>{
+ html=html.replace(/<head([^>]*)>/i,'<head$1><base href="'+base+'">');
+ document.getElementById('app').srcdoc=html;
+ document.getElementById('msg').style.display='none';
+}).catch(e=>document.getElementById('msg').textContent='Could not load WRAITH: '+e.message);
+})();
+]]></script></body></html></foreignObject></svg>

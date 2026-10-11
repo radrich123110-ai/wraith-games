@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WRAITH</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside>
+  <div class="logo"><span>W</span> WRAITH</div>
+  <nav>
+    <button class="active" data-view="home">⌂ <b>Home</b></button>
+    <button data-view="games">▦ <b>Games</b></button>
+    <button data-view="favorites">★ <b>Favorites</b></button>
+    <button data-view="settings">⚙ <b>Settings</b></button>
+  </nav>
+  <div class="status"><i></i> WRAITH ONLINE<br><small>v1.0</small></div>
+</aside>
+
+<main>
+<header>
+  <div>
+    <p class="eyebrow">GAME LAUNCHER</p>
+    <h1 id="title">Welcome to <em>WRAITH</em></h1>
+  </div>
+  <input id="search" placeholder="Search games...">
+</header>
+
+<section id="home" class="view show">
+  <div class="hero">
+    <div>
+      <span class="pill">WRAITH // GN GAMES</span>
+      <h2>YOUR GAMES.<br><strong>YOUR DOMAIN.</strong></h2>
+      <p>A fast, dark game launcher built around your library.</p>
+      <button class="primary" onclick="showView('games')">BROWSE GAMES →</button>
+    </div>
+    <div class="orb"><div>W</div></div>
+  </div>
+  <p id="catalogStatus" class="muted">Loading GN Games catalog...</p><h3>QUICK LAUNCH</h3>
+  <div id="quick" class="grid"></div><p class="muted" style="margin-top:22px">If a game appears blank, choose “Open game in new tab”. <a href="https://gn-math.dev/" target="_blank" rel="noopener noreferrer" style="color:#bda4ff">Open GN Games ↗</a></p>
+</section>
+
+<section id="games" class="view">
+  <div class="sectionTitle"><div><p class="eyebrow">LIBRARY</p><h2>All Games</h2></div><span id="count"></span></div>
+  <p class="muted">Games are served by GN Games’ public repository. Some may not support embedding or may need other files.</p><div id="library" class="grid"></div>
+</section>
+
+<section id="favorites" class="view">
+  <div class="sectionTitle"><div><p class="eyebrow">SAVED</p><h2>Favorites</h2></div></div>
+  <div id="favLibrary" class="grid"></div>
+</section>
+
+<section id="settings" class="view">
+  <div class="settings">
+    <p class="eyebrow">CONFIGURATION</p><h2>Settings</h2>
+    <label>Launcher name <input value="WRAITH" disabled></label>
+    <label><input id="compact" type="checkbox"> Compact game cards</label>
+    <p class="muted">This launcher displays links to GN Games’ public HTML repository. Game files are not bundled. Some games require additional assets or may refuse embedding.</p>
+  </div>
+</section>
+</main>
+
+<div id="player" class="player hidden">
+  <div class="playerbar"><b id="playerTitle">WRAITH PLAYER</b><div>
+    <button onclick="openExternal()">↗ Open game in new tab</button><button onclick="fullscreen()">⛶ Fullscreen</button><button onclick="closePlayer()">✕ Close</button>
+  </div></div>
+  <iframe id="frame" allowfullscreen></iframe>
+</div>
+
+<script src="games.js"></script><script src="app.js"></script>
+</body></html>
